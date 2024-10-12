@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { FaGithub, FaWhatsapp } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { LuTwitter } from "react-icons/lu";
@@ -15,23 +16,48 @@ const python = new URL("../src/images/ph.png" , import.meta.url);
 const framer= new URL('../src/images/framer.jpeg', import.meta.url);
 const figma=  new URL("../src/images/figma.png" , import.meta.url);
 const express = new URL("../src/images/express.png"  , import.meta.url);
+const pytcert = new URL('../src/images/python cert.jpg'  , import.meta.url);
+const cloud= new URL('../src/images/cloud cert.jpg', import.meta.url);
+const geekster= new URL('../src/images/Geekster cert.jpg', import.meta.url);
+const nxweb= new URL('../src/images/Nxweb cert.jpg', import.meta.url);
+const codealpha= new URL('../src/images/codealphacert.jpg', import.meta.url);
+const nexcap= new URL('../src/images/Nexcap cert.jpg', import.meta.url);
+const novitech= new URL('../src/images/Novitech cert.jpg', import.meta.url);
+const infosys= new URL('../src/images/infosys cert.jpg' , import.meta.url);
 
 
 const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className='bg-black text-white min-h-screen '>
-      <div className="navbar">
-        <nav>
-          <ul className="flex text-center justify-center space-x-1 p-4">
-            <a href="#home"><li className="hover:underline hover:bg-blue-300 hover:-translate-y-1 transition">Home</li></a>
-            <a href="#education"><li className="hover:underline hover:bg-blue-300 hover:-translate-y-1 transition">Education</li></a>
-            <a href="#skills"><li className="hover:underline hover:bg-blue-300 hover:-translate-y-1 transition">Skills</li></a>
-            <a href="#certification"><li className="hover:underline hover:bg-blue-300 hover:-translate-y-1 transition">Certification</li></a>
-            <a href="#project"><li className="hover:underline hover:bg-blue-300 hover:-translate-y-1 transition">Projects</li></a>
-            <a href="#contact"><li className="hover:underline hover:bg-blue-300 hover:-translate-y-1 transition">Contact</li></a>
+ <nav className="bg-black p-4">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="text-2xl font-bold">
+           
+          </div>
+          <button onClick={toggleNavbar} className="md:hidden">
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              )} 
+            </svg>
+          </button>
+          <ul className={`md:flex p-4 md:space-x-5 absolute md:static  bg-black md:bg-transparent transition-all duration-300 ease-in-out ${isOpen ? "top-16 left-0 w-full" : "top-[-250px]"}`}>
+            <li className="p-2"><a href="#home" className="hover:underline hover:bg-blue-400 transition p-2">Home</a></li>
+            <li className="p-2"><a href="#education" className="hover:underline hover:bg-blue-400 transition p-2">Education</a></li>
+            <li className="p-2"><a href="#skills" className="hover:underline hover:bg-blue-400 transition p-2" >Skills</a></li>
+            <li className="p-2"><a href="#certification" className="hover:underline hover:bg-blue-400 transition p-2">Certification</a></li>
+            <li className="p-2"><a href="#project" className="hover:underline hover:bg-blue-400 transition p-2">Projects</a></li>
+            <li className="p-2"><a href="#contact" className="hover:underline hover:bg-blue-400 transition p-2">Contact</a></li>
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
 
 
 
@@ -111,40 +137,40 @@ const App = () => {
           <div className=" mx-auto p-7 ">
             <ul className="space-y-4 text-center  flex flex-wrap gap-10 justify-evenly ">
               <li className="p-4 bg-black border rounded-3xl">
-                <a href='../src/images/python cert.jpg'target='_blank'> <h3 className="text-xl font-bold">Python Programming</h3></a>
+                <a href={pytcert}target='_blank'> <h3 className="text-xl font-bold">Python Programming</h3></a>
                 <p className="text-violet-400 font-mono">Conducted By JJC</p>
               </li>
               <li className="p-4 bg-black border rounded-3xl ">
-                <a href='../src/images/cloud cert.jpg'target='_blank'>  <h3 className="text-xl font-bold">Cloud Computing</h3></a>
+                <a href={cloud}target='_blank'>  <h3 className="text-xl font-bold">Cloud Computing</h3></a>
                 <p className="text-violet-400 font-mono">Conducted By JJC</p>
               </li>
 
               <li className="p-4 bg-black border rounded-3xl">
-                <a href='../src/images/Geekster cert.jpg' target='_blank'><h3 className="text-xl font-bold">SQL And Database Management</h3></a>
+                <a href={geekster} target='_blank'><h3 className="text-xl font-bold">SQL And Database Management</h3></a>
                 <p className="text-violet-400 font-mono">Participated in Geekster</p>
               </li>
 
               <li className="p-4 bg-black border rounded-3xl">
-                <a href='../src/images/Nxweb cert.jpg'target='_blank'>   <h3 className="text-xl font-bold">Software Development</h3></a>
+                <a href={nxweb}target='_blank'>   <h3 className="text-xl font-bold">Software Development</h3></a>
                 <p className="text-violet-400 font-mono">Nxweb</p>
               </li>
 
               <li className="p-4 bg-black border rounded-3xl">
-                <a href='../src/images/codealphacert.jpg' target='_blank'> <h3 className="text-xl font-bold">Full Stack Internship</h3></a>
+                <a href={codealpha} target='_blank'> <h3 className="text-xl font-bold">Full Stack Internship</h3></a>
                 <p className="text-violet-400 font-mono">CodeAlpha</p>
               </li>
 
               <li className="p-4 bg-black border rounded-3xl">
-                <a href='../src/images/Nexcap cert.jpg' target='_blank'><h3 className="text-xl font-bold">Front-end Development</h3></a>
+                <a href={nexcap} target='_blank'><h3 className="text-xl font-bold">Front-end Development</h3></a>
                 <p className="text-violet-400 font-mono">Nexcap</p>
               </li>
               <li className="p-4 bg-black border rounded-3xl">
-                <a href='../src/images/Novitech cert.jpg' target='_blank'> <h3 className="text-xl font-bold">Full stack Development</h3></a>
+                <a href={novitech} target='_blank'> <h3 className="text-xl font-bold">Full stack Development</h3></a>
                 <p className="text-violet-400 font-mono">Novitech</p>
               </li>
 
               <li className="p-4 bg-black border rounded-3xl">
-                <a href='../src/images/infosys cert.jpg' target='_blank'>   <h3 className="text-xl font-bold">Time Management</h3></a>
+                <a href={infosys}target='_blank'>   <h3 className="text-xl font-bold">Time Management</h3></a>
                 <p className="text-violet-400 font-mono">Infosys</p>
               </li>
             </ul>
@@ -158,42 +184,48 @@ const App = () => {
         <div className="project" id='project'>
           <div className="max-w-1xl mx-auto p-4 ">
             <ul className="space-y-4   flex flex-wrap gap-10 justify-around ">
+  
               <li className="bg-black rounded-2xl border p-4 text-center">
-                <h3 className="text-xl font-bold">Password Manager</h3>
-                <p> <a href="https://github.com/kannankkking/Password-Manager " target='_blank' className="text-red-400 font-mono">View Project</a></p>
+                <h3 className="text-xl font-bold">Weather App</h3>
+                <p><a href="https://weather-indol-gamma.vercel.app/" target='_blank' className="text-red-400 font-mono">View Project</a></p>
               </li>
+
               <li className="bg-black rounded-2xl border p-4 text-center">
                 <h3 className="text-xl font-bold">Shop Zone Web</h3>
-                <p> <a href="https://github.com/kannankkking/ShopZone" className="text-red-400 font-mono">View Project</a></p>
+                <p> <a href="https://shop-zone-rho.vercel.app/"target='_blank' className="text-red-400 font-mono">View Project</a></p>
               </li>
 
               <li className="bg-black rounded-2xl border p-4 text-center">
-                <h3 className="text-xl font-bold">Next Web Application</h3>
-                <p><a href="https://github.com/kannankkking/NextWeb" className="text-red-400 font-mono">View Project</a></p>
-              </li>
-
-              <li className="bg-black rounded-2xl border p-4 text-center">
-                <h3 className="text-xl font-bold">Moviflix Clone</h3>
-                <p> <a href="https://github.com/kannankkking/MovieFlix" target='_blank' className="text-red-400 font-mono">View Project</a></p>
+                <h3 className="text-xl font-bold">NextWeb Web</h3>
+                <p> <a href="https://next-web-indol.vercel.app" target='_blank' className="text-red-400 font-mono">View Project</a></p>
               </li>
 
               <li className="bg-black rounded-2xl border p-4 text-center">
                 <h3 className="text-xl font-bold">NoteBook-Therapy web</h3>
-                <p> <a href="https://github.com/kannankkking/Notebook-therapy" className="text-red-400 font-mono">View Project</a></p>
+                <p> <a href="https://notebook-therapy--psi.vercel.app/"target='_blank' className="text-red-400 font-mono">View Project</a></p>
               </li>
 
               <li className="bg-black rounded-2xl border p-4 text-center">
                 <h3 className="text-xl font-bold">Social Media Platform</h3>
-                <p> <a href="https://github.com/kannankkking/CodeAlpha_Project_Social_Media_Platform" className="text-red-400 font-mono">View Project</a></p>
+                <p> <a href="https://code-alpha-project-social-media-platform-4b8qd8dru.vercel.app"target='_blank' className="text-red-400 font-mono">View Project</a></p>
               </li>
               <li className="bg-black rounded-2xl border p-4 text-center">
                 <h3 className="text-xl font-bold">Greendan Web</h3>
-                <p> <a href="https://github.com/kannankkking/Greendan" className="text-red-400 font-mono">View Project</a></p>
+                <p> <a href="https://greendan-oaae40o57-kannans-projects-18bff487.vercel.app"target='_blank' className="text-red-400 font-mono">View Project</a></p>
+              </li>
+              <li className="bg-black rounded-2xl border p-4 text-center">
+                <h3 className="text-xl font-bold">Movies-World Web</h3>
+                <p> <a href="https://movies-world-zrcj.vercel.app/" target='_blank' className="text-red-400 font-mono">View Project</a></p>
+              </li>
+
+              <li className="bg-black rounded-2xl border p-4 text-center">
+                <h3 className="text-xl font-bold">Udemy-Clone</h3>
+                <p> <a href="https://udemy-clone-silk.vercel.app"target='_blank' className="text-red-400 font-mono">View Project</a></p>
               </li>
 
               <li className="bg-black rounded-2xl border p-4 text-center">
                 <h3 className="text-xl font-bold">Multiplayer Game</h3>
-                <p> <a href="https://github.com/kannankkking/CodeAlpha_Project_Multiplayer_Game" className="text-red-400 font-mono">View Project</a></p>
+                <p> <a href="https://code-alpha-project-multiplayer-game-rarcjcm74.vercel.app"target='_blank' className="text-red-400 font-mono">View Project</a></p>
               </li>
 
 
@@ -243,10 +275,10 @@ const App = () => {
         </ul>
       </footer>
       <div className="social  p-4 flex flex-col text-start relative bottom-72 w-9 gap-4 sticky">
-        <a href="https://x.com/kannan__006?t=u7uA3ftscoHm0S-RnfaDrA&s=09" target='_blank'><LuTwitter className='icons inline-block mx-2 ' /></a>
-        <a href="https://github.com/kannankkking" target='_blank'><FaGithub className='icons inline-block mx-2' /></a>
-        <a href="https://www.linkedin.com/in/kannan-n-78809b287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target='_blank'><CiLinkedin className='icons inline-block mx-2' /></a>
-        <a href="https://wa.me/7639564969" target='_blank'><FaWhatsapp className='icons inline-block mx-2' /></a>
+      <a href="https://github.com/kannankkking" target='_blank'><FaGithub className='icons inline-block mx-1 hover:text-blue-600 text-2xl' /></a>
+        <a href="https://x.com/kannan__006?t=u7uA3ftscoHm0S-RnfaDrA&s=09" target='_blank'><LuTwitter className='icons inline-block mx-1 hover:text-blue-600 text-2xl' /></a>
+        <a href="https://www.linkedin.com/in/kannan-n-78809b287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target='_blank'><CiLinkedin className='icons inline-block mx-1 hover:text-blue-600 text-2xl' /></a>
+        <a href="https://wa.me/7639564969" target='_blank'><FaWhatsapp className='icons inline-block mx-1 hover:text-blue-600 text-2xl' /></a>
       </div>
     </div>
 
